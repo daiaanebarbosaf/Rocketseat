@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+}/*seletor universal*/
+
+:root {
+    --primary-color: hsl(170, 100%, 26%);/*variável em CSS*/
+    --headline: hsl(210,11%, 15%);
+    --paragraph: hsl(210, 9%, 31%);
+
+    font-size: 62.5%; /*1rem = 10*/
+}
+
+/*A media rem é usada para que possa ser ampliada sem dificuldades caso o usuário necessite ampliar o texto*/
+
+body{
+    font-family: 'DM Sans';
+    text-align: center;
+}
+
+h4{
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+h1{
+    font-size: 3.4rem;
+    color: var(--paragraph);
+    line-height: 130%;
+}
+
+p {
+    font-size: 1.8rem;
+    line-height: 150%;
+    color: var(--para)
+}
+
+button {
+    background: var(--primary-color);
+
+    border: none;
+    border-radius: 0.8rem;
+
+    display: block;
+    
+}
