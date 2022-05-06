@@ -8,6 +8,8 @@
     --headline: hsl(210,11%, 15%);
     --paragraph: hsl(210, 9%, 31%);
 
+    --brand-beige: hsl(39, 100%, 97%);
+
     font-size: 62.5%; /*1rem = 10*/
 }
 
@@ -76,6 +78,29 @@ button {
     
 }
 
-img{
-    
+.stats{
+    width: 32.7rem;
+    height: 47rem;
+
+    margin-inline: auto;
+
+    background-color: var(--brand-beige);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6rem;/*separação entre os elementos*/
+}
+
+.stat h3{
+    font-size: 4.8rem;
+    color: var(--headline);
+    line-height: 130%;
+
+    margin-bottom: 0.4rem;
+}
+
+.stat p {
+    margin: 0;/*retirando os espaços entre os parágrafos*/
+    color: var(--primary-color);
 }
