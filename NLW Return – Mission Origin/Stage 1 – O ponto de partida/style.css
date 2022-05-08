@@ -145,7 +145,7 @@ header img {
 
 nav {
     display: flex;
-    align-items: center;
+    /*align-items: center;
     justify-content: space-between;
 
     /*padding-inline: ;
@@ -159,4 +159,24 @@ nav {
     top: 0;
     left: 50%;
     transform: translate(-50%);
+}
+
+nav .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav.scroll {
+    background: var(--primary-color);
+    width:100vw;/*pega 100% da página*/
+}
+
+/*aqui é definido que vai pintar apenas o primeiro svg que encontrar*/
+nav.scroll svg:nth-child(1) path{
+    fill:white;
+}
+
+nav.scroll svg:nth-child(2) path {
+    stroke: white;
 }
