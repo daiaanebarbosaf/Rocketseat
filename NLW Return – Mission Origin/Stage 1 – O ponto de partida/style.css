@@ -1,6 +1,7 @@
-/*Configuração Geral*/
+/*======Configuração Geral============*/
 *{
     margin: 0;
+    padding: 0;
     box-sizing: border-box;/*conte a partir da caixa*/
 }/*seletor universal*/
 
@@ -17,6 +18,12 @@
     --nav-height: 7.2rem;
 }
 
+html,
+body {
+        width: 100%;
+        height: 100%;
+    }
+
 /*A media rem é usada para que possa ser ampliada sem dificuldades caso o usuário necessite ampliar o texto*/
 
 body{
@@ -31,7 +38,11 @@ body{
     padding-inline: 2.4rem;
 }
 
-/*Configurações do reader*/
+ul {
+    list-style: none; /*tirando a configuração padrão dos pontinhos do inicio do texto que já é padrão em toda lista*/
+}
+
+/*===============Configurações do reader=============*/
 
 header {
     margin-top: calc(4.1rem + var(--nav-height));/*calculando as margens entre a logo DoctorCare e as Boas-Vindas*/
@@ -41,7 +52,7 @@ header {
 
 header::before {
     content: "";
-    width: 100vw;
+    width: 100%;
     height: calc(108rem + var(--nav-height));
     background-color: var(--brand-light);
     display: block;
@@ -141,7 +152,7 @@ header img {
     color: var(--primary-color);
 }
 
-/*CONGIGURAÇÕES DE NAVEGAÇÃO*/
+/*============CONGIGURAÇÕES DE NAVEGAÇÃO============*/
 
 nav {
     display: flex;
@@ -179,4 +190,22 @@ nav.scroll svg:nth-child(1) path{
 
 nav.scroll svg:nth-child(2) path {
     stroke: white;
+}
+
+/*============Menu que expande============*/
+
+.menu {
+    opacity: 0;/*esconte os textos*/
+    visibility: hidden;/*este impede que os links estejam clicaveis, pois o opacity só faz com que desapareça, mas os links contunuam clicáveis*/
+}
+
+body.menu-expandido .menu{
+    position:fixed;
+    top: 0;
+    left: 0;
+    background: var(--primary-color);
+}
+
+body.menu-expandido nav{
+    position: relative;
 }
