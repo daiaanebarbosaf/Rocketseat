@@ -194,9 +194,23 @@ nav.scroll svg:nth-child(2) path {
 
 /*============Menu que expande============*/
 
-.menu {
+body.menu-expandido {
+    overflow: hidden;/*está tirando as barrinhas de rolagem pra cima e para baixo e para os lados.*/
+}
+
+/*configuração para quando o menu estiver fechado*/
+.menu, 
+.close-menu,
+body.menu-expandido .open-menu {
     opacity: 0;/*esconte os textos*/
     visibility: hidden;/*este impede que os links estejam clicaveis, pois o opacity só faz com que desapareça, mas os links contunuam clicáveis*/
+}
+
+/*configuração para quando o menu estiver aberto*/
+body.menu-expandido .menu,
+body.menu-expandido .close-menu {
+    opacity: 1;
+    visibility: visible;
 }
 
 body.menu-expandido .menu{
@@ -204,8 +218,57 @@ body.menu-expandido .menu{
     top: 0;
     left: 0;
     background: var(--primary-color);
+
+    width: 100vw;
+    height: 100vh;
 }
 
 body.menu-expandido nav{
     position: relative;
+}
+
+/*configurações do botão que fica no menu expandido*/
+
+.menu ul:nth-child(1){
+    display: flex;/*transformando os elementos em flexíveis*/
+    flex-direction: column;/*transformando os elementos em coluna*/
+    gap: 4.8rem;/*espaçando os elementos*/
+
+    font-weight: 700;/*transformando em negrito*/
+    font-size: 2.4rem;
+    line-height: 3.1rem; /*É comumente usado para definir a distância entre as linhas de texto*/
+
+}
+
+/*só foi possível mudar a cor e tirar o sublinhado padrão acessando assim, pois esses elementos então dentro do href*/
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu .button {
+    background: white;
+    border-radius: 4rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: var(--primary-color);
+
+    display: inline-block;
+    padding: 16px 32px;
+
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+
+}
+
+/*configurações dos links das redes sociais*/
+.social-links {
+    display: flex;/*os elementos ficarão um ao lado do outro*/
+    align-items: center;/*centralizando alinhamento os itens*/
+    justify-content: center;/*colocando no centro da página*/
+    gap: 3.2rem;/*espaçamento entre elementos*/
 }
