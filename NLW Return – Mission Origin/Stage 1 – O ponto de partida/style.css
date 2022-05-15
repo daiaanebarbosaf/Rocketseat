@@ -30,6 +30,8 @@ body{
     font-family: 'DM Sans';
     font-size: 1.6rem;
     text-align: center;
+
+    overflow: overlay;/*faz com que o espaço do scroll não seja contado no movimento de descer a página. Antes de fazer isso, toda vez que a página rolava a logo era jogada um pouco para o lado*/
 }
 
 .wrapper{
@@ -188,14 +190,24 @@ nav.scroll svg:nth-child(1) path{
     fill:white;
 }
 
-nav.scroll svg:nth-child(2) path {
+nav.scroll button path {
     stroke: white;
+}
+
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;/*aparece o simbolo de mãozinha quando passar o mouse por cima do X de fechar o menu*/
 }
 
 /*============Menu que expande============*/
 
 body.menu-expandido {
     overflow: hidden;/*está tirando as barrinhas de rolagem pra cima e para baixo e para os lados.*/
+}
+
+body.menu-expandido > :not(nav) {
+    display: none;/*aplica o display nome em todos, menos nos nav de primeiro nível, isso faz com que quando o menu estiver expandido nenhum outro botão apareça*/
 }
 
 /*configuração para quando o menu estiver fechado*/
@@ -221,6 +233,8 @@ body.menu-expandido .menu{
 
     width: 100vw;
     height: 100vh;
+
+    padding-top: var(--nav-height);
 }
 
 body.menu-expandido nav{
@@ -271,4 +285,19 @@ body.menu-expandido nav{
     align-items: center;/*centralizando alinhamento os itens*/
     justify-content: center;/*colocando no centro da página*/
     gap: 3.2rem;/*espaçamento entre elementos*/
+}
+
+/*ajustes para o menu só aparecer quando clicado*/
+body.menu-expandido .logo,
+body.menu-expandido button {
+    position: relative;
+    z-index: 100;
+}
+
+body.menu-expandido .logo path{
+    fill:white;
+}
+
+body.menu-expandido button path {
+    stroke: white;
 }
