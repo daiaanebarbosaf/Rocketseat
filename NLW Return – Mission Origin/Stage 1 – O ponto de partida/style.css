@@ -13,9 +13,15 @@
     --brand-beige: hsl(39, 100%, 97%);
     --brand-light: hsl(148, 23%, 89%);
 
+    --bg-light: hsl(180, 14%, 97%);
+
     font-size: 62.5%; /*1rem = 10*/
 
     --nav-height: 7.2rem;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 html,
@@ -32,6 +38,8 @@ body{
     text-align: center;
 
     overflow: overlay;/*faz com que o espaço do scroll não seja contado no movimento de descer a página. Antes de fazer isso, toda vez que a página rolava a logo era jogada um pouco para o lado*/
+
+    background-color: var(--bg-light);
 }
 
 .wrapper{
@@ -44,7 +52,12 @@ ul {
     list-style: none; /*tirando a configuração padrão dos pontinhos do inicio do texto que já é padrão em toda lista*/
 }
 
-/*===============Configurações do reader=============*/
+section {
+    padding-block: 10rem;
+}
+
+
+/*===============CONFIGURAÇÕES DO HEADER=============*/
 
 header {
     margin-top: calc(4.1rem + var(--nav-height));/*calculando as margens entre a logo DoctorCare e as Boas-Vindas*/
