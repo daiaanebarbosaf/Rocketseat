@@ -13,3 +13,9 @@ function openMenu(){
 function closeMenu(){
     document.body.classList.remove('menu-expandido');
 }
+
+ScrollReveal({
+    origin:'top',
+    distance:'30px',
+    duration: 700,
+}).reveal('#home');
