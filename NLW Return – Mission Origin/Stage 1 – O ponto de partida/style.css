@@ -136,7 +136,7 @@ section {
     object-position: 0 2rem;
 }
 
-#home.stats{
+.stats{
     width: 32.7rem;
 
     padding-block: 4rem;
@@ -151,10 +151,9 @@ section {
     justify-content: center;
     gap: 6rem;/*separação entre os elementos*/
 
-
 }
 
-#home.stat h3{
+.stat h3{
     font-size: 4.8rem;
     color: var(--headline);
     line-height: 130%;
@@ -162,7 +161,7 @@ section {
     margin-bottom: 0.4rem;
 }
 
-#home.stat p {
+.stat p {
     margin: 0;/*retirando os espaços entre os parágrafos*/
     color: var(--primary-color);
 }
@@ -253,7 +252,7 @@ body.menu-expandido .menu{
 
     padding-top: var(--nav-height);
 
-    transition: opacity 700ms;
+    transition: 700ms;
 
     transform: translateY(0);
 }
