@@ -56,6 +56,162 @@ section {
     padding-block: 10rem;
 }
 
+/*============CONGIGURAÇÕES DE NAVEGAÇÃO============*/
+
+nav {
+    display: flex;
+    /*align-items: center;
+    justify-content: space-between;
+
+    /*padding-inline: ;
+    padding-block: ;*/
+
+    /*padding: 1.6rem 2.4rem; esse padding, é um atalho dos dois acima*/
+
+    height: var(--nav-height);
+
+    position: fixed;
+    top: 0;
+    width:100vw;/*pega 100% da página*/
+
+    z-index: 100;
+}
+
+nav .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav.scroll {
+    background: var(--primary-color);
+}
+
+/*aqui é definido que vai pintar apenas o primeiro svg que encontrar*/
+nav.scroll .logo path{
+    fill:white;
+}
+
+nav.scroll button path {
+    stroke: white;
+}
+
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;/*aparece o simbolo de mãozinha quando passar o mouse por cima do X de fechar o menu*/
+}
+
+/*============Menu que expande============*/
+
+body.menu-expandido {
+    overflow: hidden;/*está tirando as barrinhas de rolagem pra cima e para baixo e para os lados.*/
+}
+
+body.menu-expandido > :not(nav) {
+    /*display: none; aplica o display nome em todos, menos nos nav de primeiro nível, isso faz com que quando o menu estiver expandido nenhum outro botão apareça*/
+    visibility: hidden;/*visibilidade escondida*/
+}
+
+/*configuração para quando o menu estiver fechado*/
+.menu, 
+.close-menu,
+body.menu-expandido .open-menu {
+    opacity: 0;/*esconte os textos*/
+    visibility: hidden;/*este impede que os links estejam clicaveis, pois o opacity só faz com que desapareça, mas os links contunuam clicáveis*/
+}
+
+/*configuração para quando o menu estiver aberto*/
+body.menu-expandido .menu,
+body.menu-expandido .close-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu {
+    transform: translateY(100%);
+}
+
+body.menu-expandido .menu{
+    position:fixed;
+    top: 0;
+    left: 0;
+    background: var(--primary-color);
+
+    width: 100vw;
+    height: 100vh;
+
+    padding-top: var(--nav-height);
+
+    transition: 700ms;
+
+    transform: translateY(0);
+}
+
+/*body.menu-expandido nav{
+    position: relative;
+}*/
+
+/*configurações do botão que fica no menu expandido*/
+
+.menu ul:nth-child(1){
+    display: flex;/*transformando os elementos em flexíveis*/
+    flex-direction: column;/*transformando os elementos em coluna*/
+    gap: 4.8rem;/*espaçando os elementos*/
+
+    font-weight: 700;/*transformando em negrito*/
+    font-size: 2.4rem;
+    line-height: 3.1rem; /*É comumente usado para definir a distância entre as linhas de texto*/
+
+}
+
+/*só foi possível mudar a cor e tirar o sublinhado padrão acessando assim, pois esses elementos então dentro do href*/
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu .button {
+    background: white;
+    border-radius: 4rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: var(--primary-color);
+
+    display: inline-block;
+    padding: 16px 32px;
+
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+
+}
+
+/*configurações dos links das redes sociais*/
+.social-links {
+    display: flex;/*os elementos ficarão um ao lado do outro*/
+    align-items: center;/*centralizando alinhamento os itens*/
+    justify-content: center;/*colocando no centro da página*/
+    gap: 3.2rem;/*espaçamento entre elementos*/
+}
+
+/*ajustes para o menu só aparecer quando clicado*/
+body.menu-expandido .logo,
+body.menu-expandido button {
+    position: relative;
+    z-index: 100;
+}
+
+body.menu-expandido .logo path{
+    fill:white;
+}
+
+body.menu-expandido button path {
+    stroke: white;
+}
 
 /*==========CONFIGURAÇÕES DO HEADER/HOME==========*/
 
@@ -136,7 +292,7 @@ section {
     object-position: 0 2rem;
 }
 
-.stats{
+#home .stats{
     width: 32.7rem;
 
     padding-block: 4rem;
@@ -153,7 +309,7 @@ section {
 
 }
 
-.stat h3{
+ #home .stat h3{
     font-size: 4.8rem;
     color: var(--headline);
     line-height: 130%;
@@ -161,165 +317,9 @@ section {
     margin-bottom: 0.4rem;
 }
 
-.stat p {
+#home .stat p {
     margin: 0;/*retirando os espaços entre os parágrafos*/
     color: var(--primary-color);
-}
-
-/*============CONGIGURAÇÕES DE NAVEGAÇÃO============*/
-
-nav {
-    display: flex;
-    /*align-items: center;
-    justify-content: space-between;
-
-    /*padding-inline: ;
-    padding-block: ;*/
-
-    /*padding: 1.6rem 2.4rem; esse padding, é um atalho dos dois acima*/
-
-    height: var(--nav-height);
-
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%);
-}
-
-nav .wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-nav.scroll {
-    background: var(--primary-color);
-    width:100vw;/*pega 100% da página*/
-}
-
-/*aqui é definido que vai pintar apenas o primeiro svg que encontrar*/
-nav.scroll svg:nth-child(1) path{
-    fill:white;
-}
-
-nav.scroll button path {
-    stroke: white;
-}
-
-nav button {
-    background: none;
-    border: none;
-    cursor: pointer;/*aparece o simbolo de mãozinha quando passar o mouse por cima do X de fechar o menu*/
-}
-
-/*============Menu que expande============*/
-
-body.menu-expandido {
-    overflow: hidden;/*está tirando as barrinhas de rolagem pra cima e para baixo e para os lados.*/
-}
-
-body.menu-expandido > :not(nav) {
-    display: none;/*aplica o display nome em todos, menos nos nav de primeiro nível, isso faz com que quando o menu estiver expandido nenhum outro botão apareça*/
-}
-
-/*configuração para quando o menu estiver fechado*/
-.menu, 
-.close-menu,
-body.menu-expandido .open-menu {
-    opacity: 0;/*esconte os textos*/
-    visibility: hidden;/*este impede que os links estejam clicaveis, pois o opacity só faz com que desapareça, mas os links contunuam clicáveis*/
-}
-
-/*configuração para quando o menu estiver aberto*/
-body.menu-expandido .menu,
-body.menu-expandido .close-menu {
-    opacity: 1;
-    visibility: visible;
-}
-
-.menu {
-    transform: translateY(100%);
-}
-
-body.menu-expandido .menu{
-    position:fixed;
-    top: 0;
-    left: 0;
-    background: var(--primary-color);
-
-    width: 100vw;
-    height: 100vh;
-
-    padding-top: var(--nav-height);
-
-    transition: 700ms;
-
-    transform: translateY(0);
-}
-
-body.menu-expandido nav{
-    position: relative;
-}
-
-/*configurações do botão que fica no menu expandido*/
-
-.menu ul:nth-child(1){
-    display: flex;/*transformando os elementos em flexíveis*/
-    flex-direction: column;/*transformando os elementos em coluna*/
-    gap: 4.8rem;/*espaçando os elementos*/
-
-    font-weight: 700;/*transformando em negrito*/
-    font-size: 2.4rem;
-    line-height: 3.1rem; /*É comumente usado para definir a distância entre as linhas de texto*/
-
-}
-
-/*só foi possível mudar a cor e tirar o sublinhado padrão acessando assim, pois esses elementos então dentro do href*/
-.menu ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.menu .button {
-    background: white;
-    border-radius: 4rem;
-    font-weight: 700;
-    font-size: 1.8rem;
-    line-height: 2.3rem;
-    text-transform: uppercase;
-    text-decoration: none;
-
-    color: var(--primary-color);
-
-    display: inline-block;
-    padding: 16px 32px;
-
-    margin-top: 4.8rem;
-    margin-bottom: 8rem;
-
-}
-
-/*configurações dos links das redes sociais*/
-.social-links {
-    display: flex;/*os elementos ficarão um ao lado do outro*/
-    align-items: center;/*centralizando alinhamento os itens*/
-    justify-content: center;/*colocando no centro da página*/
-    gap: 3.2rem;/*espaçamento entre elementos*/
-}
-
-/*ajustes para o menu só aparecer quando clicado*/
-body.menu-expandido .logo,
-body.menu-expandido button {
-    position: relative;
-    z-index: 100;
-}
-
-body.menu-expandido .logo path{
-    fill:white;
-}
-
-body.menu-expandido button path {
-    stroke: white;
 }
 
 /*============CONGIGURAÇÕES DO SERVICES============*/
@@ -361,3 +361,5 @@ body.menu-expandido button path {
 #services .card h3 {
     margin-block: 1.6rem;
 }
+
+/*============CONGIGURAÇÕES DO ABOUT============*/
