@@ -56,6 +56,28 @@ section {
     padding-block: 10rem;
 }
 
+section header h4{
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1.6rem;
+
+    text-transform: uppercase;
+}
+
+section header h2{
+    
+}
+
+section header h1{
+    font-size: 3.4rem;
+    color: var(--paragraph);
+    line-height: 130%;
+
+    margin-bottom: 2.4rem;
+}
+
+
+
 /*============CONGIGURAÇÕES DE NAVEGAÇÃO============*/
 
 nav {
