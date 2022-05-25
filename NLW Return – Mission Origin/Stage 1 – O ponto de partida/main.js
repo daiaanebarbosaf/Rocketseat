@@ -7,11 +7,11 @@ function onScroll() {
 }
 
 function openMenu(){
-    document.body.classList.add('menu-expandido');
+    document.body.classList.add('menu-expandided');
 }
 
 function closeMenu(){
-    document.body.classList.remove('menu-expandido');
+    document.body.classList.remove('menu-expanded');
 }
 
 ScrollReveal({
