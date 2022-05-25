@@ -52,20 +52,31 @@ ul {
     list-style: none; /*tirando a configuração padrão dos pontinhos do inicio do texto que já é padrão em toda lista*/
 }
 
+img {
+    max-width: 100%;/*com esse atributo ele vai respeitar a largura padrão*/
+}
+
 section {
     padding-block: 10rem;
 }
 
 section header h4{
     font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0.08rem;
     color: var(--primary-color);
-    margin-bottom: 1.6rem;
 
     text-transform: uppercase;
+
+    margin-bottom: 1.6rem;
 }
 
 section header h2{
-    
+    font-size: 3rem;
+    line-height: 3.9rem;
+
+    color: var(--headline);
 }
 
 section header h1{
@@ -76,6 +87,13 @@ section header h1{
     margin-bottom: 2.4rem;
 }
 
+section .content p {
+    font-weight: 3.4rem;
+    font-size: 1.6rem;
+    line-height: 150%;
+
+    color: var(--paragraph);
+}
 
 
 /*============CONGIGURAÇÕES DE NAVEGAÇÃO============*/
@@ -105,7 +123,7 @@ nav .wrapper{
     justify-content: space-between;
 }
 
-nav.scroll {
+nav .scroll {
     background: var(--primary-color);
 }
 
@@ -165,8 +183,7 @@ body.menu-expandido .menu{
 
     padding-top: var(--nav-height);
 
-    transition: 700ms;
-
+    transition: transform 300ms;
     transform: translateY(0);
 }
 
@@ -180,6 +197,8 @@ body.menu-expandido .menu{
     display: flex;/*transformando os elementos em flexíveis*/
     flex-direction: column;/*transformando os elementos em coluna*/
     gap: 4.8rem;/*espaçando os elementos*/
+
+    margin-top: 6rem;
 
     font-weight: 700;/*transformando em negrito*/
     font-size: 2.4rem;
@@ -244,7 +263,7 @@ body.menu-expandido button path {
 /*configurações da caixa verde atrás da imagem da moça*/
 
 #home::before {
-    content: "";
+    content: '';
     width: 100%;
     height: calc(108rem + var(--nav-height));
     background-color: var(--brand-light);
@@ -346,6 +365,10 @@ body.menu-expandido button path {
 
 /*============CONGIGURAÇÕES DO SERVICES============*/
 
+#services h2 {
+    margin-bottom: 6rem;
+}
+
 #services header h4{
     font-size: 1.4rem;
     line-height: 150%;
@@ -385,3 +408,17 @@ body.menu-expandido button path {
 }
 
 /*============CONGIGURAÇÕES DO ABOUT============*/
+
+#about {
+    text-align: left;
+    background-color: var(--brand-beige);
+}
+
+#about header h2 {
+    margin-bottom: 2.4rem;
+}
+
+#about .content p {
+    margin-top: 2.4rem;
+    margin-bottom: 6rem;
+}
