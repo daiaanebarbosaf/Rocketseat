@@ -144,11 +144,11 @@ nav button {
 
 /*============Menu que expande============*/
 
-body.menu-expandido {
+body.menu-expanded {
     overflow: hidden;/*está tirando as barrinhas de rolagem pra cima e para baixo e para os lados.*/
 }
 
-body.menu-expandido > :not(nav) {
+body.menu-expanded > :not(nav) {
     /*display: none; aplica o display nome em todos, menos nos nav de primeiro nível, isso faz com que quando o menu estiver expandido nenhum outro botão apareça*/
     visibility: hidden;/*visibilidade escondida*/
 }
@@ -156,14 +156,14 @@ body.menu-expandido > :not(nav) {
 /*configuração para quando o menu estiver fechado*/
 .menu, 
 .close-menu,
-body.menu-expandido .open-menu {
+body.menu-expanded .open-menu {
     opacity: 0;/*esconte os textos*/
     visibility: hidden;/*este impede que os links estejam clicaveis, pois o opacity só faz com que desapareça, mas os links contunuam clicáveis*/
 }
 
 /*configuração para quando o menu estiver aberto*/
-body.menu-expandido .menu,
-body.menu-expandido .close-menu {
+body.menu-expanded .menu,
+body.menu-expanded .close-menu {
     opacity: 1;
     visibility: visible;
 }
@@ -172,7 +172,7 @@ body.menu-expandido .close-menu {
     transform: translateY(100%);
 }
 
-body.menu-expandido .menu{
+body.menu-expanded .menu{
     position:fixed;
     top: 0;
     left: 0;
@@ -240,17 +240,17 @@ body.menu-expandido .menu{
 }
 
 /*ajustes para o menu só aparecer quando clicado*/
-body.menu-expandido .logo,
-body.menu-expandido button {
+body.menu-expanded .logo,
+body.menu-expanded button {
     position: relative;
     z-index: 100;
 }
 
-body.menu-expandido .logo path{
+body.menu-expanded .logo path{
     fill:white;
 }
 
-body.menu-expandido button path {
+body.menu-expanded button path {
     stroke: white;
 }
 
