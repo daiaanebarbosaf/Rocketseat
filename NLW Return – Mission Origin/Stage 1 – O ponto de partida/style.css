@@ -121,12 +121,10 @@ nav .wrapper{
     display: flex;
     align-items: center;
     justify-content: space-between;
-   
 }
 
 nav.scroll {
     background: var(--primary-color);
-    width: 100vw;
 }
 
 /*aqui é definido que vai pintar apenas o primeiro svg que encontrar*/
