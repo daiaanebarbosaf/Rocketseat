@@ -12,6 +12,8 @@
 
     --brand-beige: hsl(39, 100%, 97%);
     --brand-light: hsl(148, 23%, 89%);
+    --brand-dark: hsl(170, 100%, 14%, 1);
+
 
     --bg-light: hsl(180, 14%, 97%);
 
@@ -103,8 +105,8 @@ section .content p {
 
     margin-bottom: 6rem;
 
-    height: 6.2rem;
-    width: 26.3rem;
+    padding: 1.6rem 3.2rem;
+    width: fit-content;
 
     color: white;
     text-transform: uppercase;
@@ -117,7 +119,20 @@ section .content p {
     gap: 1.6rem;
 
     text-decoration: none;
+
+    transition: background 200ms;
 }    
+
+.button:hover {
+    background-color: var(--brand-dark);
+}
+
+.social-links {
+    display: flex;/*os elementos ficarão um ao lado do outro*/
+    align-items: center;/*centralizando alinhamento os itens*/
+    justify-content: center;/*colocando no centro da página*/
+    gap: 3.2rem;/*espaçamento entre elementos*/
+}
 
 
 /*============CONGIGURAÇÕES DE NAVEGAÇÃO============*/
@@ -256,12 +271,6 @@ body.menu-expanded .menu{
 }
 
 /*configurações dos links das redes sociais*/
-.social-links {
-    display: flex;/*os elementos ficarão um ao lado do outro*/
-    align-items: center;/*centralizando alinhamento os itens*/
-    justify-content: center;/*colocando no centro da página*/
-    gap: 3.2rem;/*espaçamento entre elementos*/
-}
 
 /*ajustes para o menu só aparecer quando clicado*/
 body.menu-expanded .logo,
@@ -297,6 +306,10 @@ body.menu-expanded button path {
     top: 0;
     left: 0;
     z-index: -1;
+}
+
+#home .button {
+    margin-inline: auto;
 }
 
 #home h4{
@@ -435,10 +448,65 @@ body.menu-expanded button path {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+
+    margin-bottom: 3.2rem;
 }
 
 #contact ul li {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+}
+
+/*============CONGIGURAÇÕES DO FOOTER============*/
+
+footer {
+    background-color: var(--primary-color);
+    padding-block: 6rem;
+
+    text-align: left;
+
+    color: white;
+}
+
+footer .logo {
+    display: inline-block;
+    margin-bottom: 2.4rem;
+}
+
+footer .logo svg {
+    width: 23.6rem;
+    height: 3.1rem;
+}
+
+footer .logo path {
+    fill: white;
+}
+
+footer p {
+    color: var(--brand-beige);
+    line-height: 2;
+
+    margin-bottom: 3.2rem;
+}
+
+footer .social-links {
+    /*o flex-start faz com que os itens se alinhei ao inicio da linha*/
+    justify-content: flex-start;
+}
+
+/*============CONGIGURAÇÕES DO BACK TO TOP ============*/
+
+#backToTopButton {
+    position: fixed;
+    bottom: 1rem;
+    right: 2.5rem;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+#backToTopButton.show {
+    opacity: 1;
+    visibility: visible;
 }
