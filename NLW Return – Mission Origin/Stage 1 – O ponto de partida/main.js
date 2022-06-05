@@ -1,31 +1,37 @@
+window.addEventListener('scroll', onScroll);
+
+onScroll();
+
 /*Gerencia os Scrolls da página*/
 function onScroll() {
-    showNavOnScroll()
-    showBackToTopButtonOnScroll()
+    showNavOnScroll();
+    showBackToTopButtonOnScroll();
 }
 
+/*Mostrar o navigation ao mostrar o scroll*/
 function showNavOnScroll () {
     if(scrollY > 0) {
-        navigation.classList.add('scroll')
+        navigation.classList.add('scroll');
     } else {
-        navigation.classList.remove('scroll')
+        navigation.classList.remove('scroll');
     }
 }
 
+/*Mostrar o botão back to top ao rolar a página para baixo*/
 function showBackToTopButtonOnScroll(){
-    if(scrollY > 500) {
-        backToTopButton.classList.add('show')
+    if(scrollY > 400) {
+        backToTopButton.classList.add('show');
     } else {
-        backToTopButton.classList.remove('show')
+        backToTopButton.classList.remove('show');
     }
 }
 
 function openMenu(){
-    document.body.classList.add('menu-expanded')
+    document.body.classList.add('menu-expanded');
 }
 
 function closeMenu(){
-    document.body.classList.remove('menu-expanded')
+    document.body.classList.remove('menu-expanded');
 }
 
 ScrollReveal({
@@ -41,4 +47,4 @@ ScrollReveal({
 #services .card
 #about,
 #about header,
-#about .content`)
+#about .content`);
