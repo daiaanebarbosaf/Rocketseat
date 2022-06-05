@@ -47,7 +47,7 @@ body{
 }
 
 .wrapper{
-    width: 37.5rem;
+    width: min(50rem, 100%);
     margin-inline: auto;
     padding-inline: 2.4rem;
 }
@@ -209,6 +209,11 @@ nav button {
     cursor: pointer;/*aparece o simbolo de mãozinha quando passar o mouse por cima do X de fechar o menu*/
 }
 
+nav .menu,
+nav .close-menu {
+    position: fixed;
+}
+
 /*============Menu que expande============*/
 
 body.menu-expanded {
@@ -240,7 +245,6 @@ body.menu-expanded .close-menu {
 }
 
 body.menu-expanded .menu{
-    position:fixed;
     top: 0;
     left: 0;
     background: var(--primary-color);
@@ -377,15 +381,14 @@ body.menu-expanded button path {
     object-position: 0 2rem;
 }
 
-#home .stats{
-    width: 32.7rem;
+#home .stats {
+    width: 100%;
 
     padding-block: 4rem;
-
     margin-inline: auto;
 
     background-color: var(--brand-beige);
-    border: 1px solid var(--brand-light);
+    border-radius: 1px solid var(--brand-light);
 
     display: flex;
     flex-direction: column;
@@ -547,4 +550,24 @@ footer .social-links {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+/*============CONGIGURAÇÕES DE RESPONSIVIDADE============*/
+
+/*Essa linha de código significa dizer que quando a tela tiver o tamanho mínimo de 1024px, as cofigurações que estaram dentro dos conchetes será aplicada*/
+@media (min-width: 1024px){
+
+    /*===CONGIGURAÇÕES GERAIS===*/
+
+    /*===CONGIGURAÇÕES DE NAVIGATION===*/
+
+    /*===CONGIGURAÇÕES DO RESET===*/
+    nav#navigation .wrapper * { /*o asterisco siginifica pegar todos*/
+        margin: 0;
+        padding: 0;
+        visibility: initial;
+        display: initial;
+        opacity: initial;
+        position: initial;
+    }
 }
