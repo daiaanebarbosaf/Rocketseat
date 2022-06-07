@@ -7,7 +7,7 @@
 
 :root {
 
-    --hue: 290;
+    --hue: 190;
     --primary-color: hsl(var(--hue), 100%, 26%);/*variável em CSS*/
     --headline: hsl(210,11%, 15%);
     --paragraph: hsl(210, 9%, 31%);
@@ -558,16 +558,75 @@ footer .social-links {
 @media (min-width: 1024px){
 
     /*===CONGIGURAÇÕES GERAIS===*/
+    /*Essa linha diz que tudo que está dentro da página vai crescer 100% até chegar aos 1121px que é igual a 122rem*/
+    .wrapper {
+        width: min(122rem, 100%);
+    }
 
     /*===CONGIGURAÇÕES DE NAVIGATION===*/
 
     /*===CONGIGURAÇÕES DO RESET===*/
+    /*Serão resetadas todas as configurações para que possa mexer no menu*/
     nav#navigation .wrapper * { /*o asterisco siginifica pegar todos*/
         margin: 0;
         padding: 0;
         visibility: initial;
         display: initial;
         opacity: initial;
+        flex-direction: initial;
         position: initial;
+        font-size: initial;
+        font-weight: initial;
+        transform: initial;
+        color: initial;
+        background-color: initial;
+        align-items: initial;
+        text-transform: initial;
+        line-height:initial;
+        gap: initial;
+        justify-content: initial;
+        
+    }
+
+    /*nesse trecho os botoes de clicar nas redes sociais, abrir e fechar menu estão sendo excluídos*/
+    nav#navigation .close-menu,
+    nav#navigation .close-menu,
+    nav#navigation .social-links {
+        display: none;
+    }
+
+    nav#navigation .menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 60%;
+    }
+
+    nav#navigation .menu ul:nth-child(1) {
+        display: flex;
+        gap: 3.2rem;
+    }
+    
+    nav#navigation .menu ul li a {
+        color: var(--primary-color);
+        opacity: 0.7;
+    }
+
+    nav#navigation .menu a.button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 2.4rem;
+
+        border: 1px solid var(--primary-color);
+        border-radius: 4rem;
+
+        color: var(--primary-color);
+
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        text-transform: uppercase;
+
     }
 }
