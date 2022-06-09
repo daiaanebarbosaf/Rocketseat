@@ -336,7 +336,7 @@ body.menu-expanded button path {
 #home::before {
     content: '';
     width: 100%;
-    height: calc(108rem + var(--nav-height));
+    height: calc(72% + var(--nav-height));
     background-color: var(--brand-light);
     display: block;
 
@@ -584,7 +584,9 @@ footer .social-links {
         background-color: initial;
         filter: initial;
         text-transform: initial;
-        /*line-height:initial;*/
+        text-align: initial;
+        line-height: initial;
+        justify-content: initial;
         
     }
 
@@ -694,7 +696,63 @@ footer .social-links {
     }
 
     /*===CONGIGURAÇÕES DE HOME===*/
+
+    #home::before {
+        height: calc(82% - var(--nav-height));
+    }
+
+    #home {
+        padding-top: var(--nav-height);
+    }
+
     #home .wrapper {
-        
+        /*aqui iremos definir qual o tamanho de cada item na página. Tudo que está na col-a, vai ocupar 60.5rem e assim por diante*/
+        grid-template-columns: 60.5rem 1fr;
+        grid-template-areas:
+        'A B'
+        'C C';
+    }
+
+    #home .col-a {
+        grid-area: A;
+        text-align: left;
+        align-self: center;
+    }
+
+    #home .col-b {
+        grid-area: B;
+    }
+
+    #home h1 {
+        font-size: 5.2rem;
+    }
+
+    #home p {
+        font-size: 1.8rem;
+    }
+
+    #home .stats {
+        grid-area: C;
+
+        flex-direction: row;
+        padding: 6rem;
+        gap: 0;
+    }
+
+    /*Essa linha significa dizer que, procure o .stat que anterior a ele tenha um .stat*/
+    #home .stats .stat + .stat {
+        border-left: 1px solid var(--primary-color);
+    }
+
+    #home .stats .stat {
+        flex: 1;
+    }
+
+    #home .button {
+        margin: 0;
+    }
+
+    #home img {
+        width: 42rem;
     }
 }
