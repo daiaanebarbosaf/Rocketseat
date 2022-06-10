@@ -328,6 +328,7 @@ body.menu-expanded button path {
 /*==========CONFIGURAÇÕES DO HEADER/HOME==========*/
 
 #home {
+    padding-block: 0;
     padding-top: calc(4.1rem + var(--nav-height));/*calculando as margens entre a logo DoctorCare e as Boas-Vindas*/
 }
 
@@ -336,7 +337,7 @@ body.menu-expanded button path {
 #home::before {
     content: '';
     width: 100%;
-    height: calc(72% + var(--nav-height));
+    height: calc(76% + var(--nav-height));
     background-color: var(--brand-light);
     display: block;
 
@@ -559,10 +560,24 @@ footer .social-links {
 @media (min-width: 1024px){
 
     /*===CONGIGURAÇÕES GERAIS===*/
+
+    body {
+        overflow: auto;
+    }
+
     /*Essa linha diz que tudo que está dentro da página vai crescer 100% até chegar aos 1121px que é igual a 122rem*/
     .wrapper {
         width: min(122rem, 100%);
         display: grid;
+    }
+
+    section {
+        padding-block: 16rem;
+    }
+
+    section h2 {
+        font-size: 4rem;
+        line-height: 5.2rem;
     }
 
     /*===CONGIGURAÇÕES DE NAVIGATION===*/
@@ -698,7 +713,7 @@ footer .social-links {
     /*===CONGIGURAÇÕES DE HOME===*/
 
     #home::before {
-        height: calc(82% - var(--nav-height));
+        height: calc(96% - var(--nav-height));
     }
 
     #home {
@@ -755,4 +770,25 @@ footer .social-links {
     #home img {
         width: 42rem;
     }
+
+    /*==========CONFIGURAÇÕES DO SERVICES==========*/
+
+    #services h2 {
+        width: 47rem;
+        margin-inline: auto;
+    }
+
+    #services .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4rem;
+    }
+
+    #services .card {
+        width: 30%;
+        flex-grow: 1;
+    }
+
+    /*==========CONFIGURAÇÕES DO ABOUT==========*/
+
 }
