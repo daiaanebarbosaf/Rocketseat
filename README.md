@@ -1,2 +1,2 @@
 # Rocketseat
- Pojetos criados na semana da NLW Origin
+ Projeto criado durante a NLW Origin
