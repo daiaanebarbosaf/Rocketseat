@@ -1,5 +1,6 @@
 window.addEventListener('scroll', onScroll)
 
+const navigation = document.getElementById('navigation')
 onScroll()
 //Gerencia os Scrolls da página
 function onScroll() {
@@ -48,10 +49,10 @@ function activateMenuAtCurrentSection(section) {
 
     //limites da seção
     const sectionBoundaries =
-    sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetline
+    sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetline;
     
     const sectionId = section.getAttribute('id')
-    const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`)
+    const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`);
 
     menuElement.classList.remove ('active')
     if (sectionBoundaries) {
@@ -61,6 +62,7 @@ function activateMenuAtCurrentSection(section) {
 
 //Mostrar o navigation ao mostrar o scroll
 function showNavOnScroll() {
+    console.log(scrollY)
     if (scrollY > 0) {
         navigation.classList.add('scroll')
     } else {
