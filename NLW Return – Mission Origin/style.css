@@ -22,7 +22,7 @@
 
     font-size: 62.5%; /*1rem = 10*/
 
-    --nav-height: 7.2rem;
+    --nav-height: 6.2rem;
 }
 
 html {
@@ -153,7 +153,7 @@ button.open-menu path[stroke*="#00856F"],
     stroke: var(--primary-color);
 }
 
-body.menu-expanded #navigation .logo path,
+body.menu-expanded #navigation.logo path,
 #navigation.scroll .logo path {
     fill: white;
 }
@@ -686,11 +686,12 @@ footer .social-links {
     nav#navigation .menu li a::after {
         content: '';
         width: 0%;
+        
         height: 2px;
         background-color: var(--primary-color);
 
         position: relative;
-        bottom: -3.3rem;
+        bottom: -2.8rem;
         left: -0.5rem;
 
         display: block;
